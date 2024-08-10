@@ -149,13 +149,3 @@ header > div{
         }
     }
 }
-
-
-/* this is the main div where all books are displayed*/
-main{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
