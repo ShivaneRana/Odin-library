@@ -2,20 +2,26 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     scroll-behavior: smooth;
     --primaryColor:#DEE4EA;
-    --secondaryColor:#B3B9C4;
+    --secondaryColor:#F1F2F4;
     --inverse:#101214;
+    --inverse2:#161A1D;
+    --inverse3:#2C333A;
 }
 
 :root.dark{
     --primaryColor:#101214;
-    --secondaryColor:#454F59;
+    --secondaryColor:#161A1D;
     --inverse:#DEE4EA;
+    --inverse2:#F1F2F4;
+    --inverse3:#DCDFE4;
 }
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --red:#F15B50;
+    --green:#2ABB7F;
 }
 
 body{
@@ -46,6 +52,7 @@ header > div{
     align-items: center;
     gap: 1vw;
     min-width: min-content;
+    min-height: min-content;
     padding: 10px;
 
     &:nth-child(2){
@@ -53,22 +60,102 @@ header > div{
             background-color: var(--primaryColor);
             color: var(--inverse);
             border: none;
-            font-size: 1.2rem;
+            font-size: calc(1.5rem + 1.5vw);
             font-weight: bolder;
             transition: background-color 0.50s;
+            cursor: pointer;;
         }
     }
 
     & > img{
-        height: 70%;
+        height: calc(1.5rem + 2vw);
+        cursor: pointer;
+    }
+}
+
+/* this is for the dialog */
+.showAddBook{
+    position: absolute;
+    margin: auto;
+    border: none;
+    background-color: var(--secondaryColor);
+    padding: 0px;
+    box-shadow: var(--inverse) 0px 1px 1px, var(--inverse)(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    border-radius: 30px;
+    color: var(--inverse);
+    & > .wrapper{
+        padding: 50px;
+    }
+
+    &::backdrop{
+        background-color: transparent;
+        backdrop-filter: blur(2px);
     }
 }
 
 .wrapper{
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & > h1{
+        margin-bottom: 25px;
+    }
+    & > form{
+        
+        font-weight: bold;
+
+        & > div > input{
+            margin-bottom: 10px;
+            margin-top: 2px;
+            width: 100%;
+            border: none;
+            outline: 1px solid var(--inverse);
+            padding: 10px;
+            font-weight: lighter;
+        }
+    }
 }
 
-.showAddBook{
-    position: absolute;
-    margin: auto;
+/* this is for dialog button */
+.formButton{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    & > button{
+        font-size: 1rem;
+        background-color: var(--inverse);
+        color:var(--primaryColor);
+        border-radius: 20px;
+        padding: 20px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.30s;
+        font-weight: bold;
+
+        /* this is for save button */
+        &:first-child{
+            &:hover{
+                background-color: var(--green);
+            }
+        }
+
+        /* this is cancel button */
+        &:last-child{
+            &:hover{
+                background-color: var(--red);
+            }
+        }
+    }
+}
+
+
+/* this is the main div where all books are displayed*/
+main{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
