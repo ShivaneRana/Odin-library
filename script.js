@@ -6,6 +6,9 @@ const wrapper = document.querySelector(".wrapper")
 const add = document.querySelector(".add");
 const cancel = document.querySelector(".cancel");
 const main = document.querySelector("main");
+const author = document.querySelector("#author");
+const title = document.querySelector("#title");
+const pages = document.querySelector("#pages");
 
 
 // this changes theme
@@ -34,5 +37,6 @@ showAddBook.addEventListener("click",function(e){
 
 // this closes the dialog box
 cancel.addEventListener("click",function(){
+
     showAddBook.close();
 })
