@@ -35,12 +35,17 @@ body{
 
 /* this is for the header */
 header{
-    position: fixed;
+    position: absolute;
     height: 10vh;
     width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
+    backdrop-filter: blur(1px);
 }
 
 header > div{
