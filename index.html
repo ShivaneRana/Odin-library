@@ -17,22 +17,34 @@
                 + Add Book
             </button>
         </div>
+        <!-- this display when add Book is clicked -->
         <dialog class="showAddBook">
-            <h1>this is for demonstration purpose</h1>
+            <div class="wrapper">
+            <h1>Book Details</h1>
             <form>
-                <label for="author">Author</label>
-                    <input id="author" name="author"><br>
-                <label for="title">Title</label>
-                    <input id="title" name="title"><br>
-                <label for="numberOfPages">Number Of Pages</label>
-                    <input id="numberOfPages" name="numberOfPages">
-                <button class="add">Add</button>
-                <button class="cancel">Cancel</button>
+                <div class="formTop">
+                    <label for="author">Author</label>
+                    <input id="author" name="author" type="text">
+                </div>
+                <div class="formMiddle">
+                    <label for="title">Title</label>
+                    <input id="title" name="title" type="text">
+                </div>
+                <div class="formBottom">    
+                    <label for="numberOfPages">Number Of Pages</label>
+                    <input id="numberOfPages" name="numberOfPages" type="number">
+                </div>
+                <div class="formButton">
+                    <button class="add" type="button">Save</button>
+                    <button class="cancel" type="button">Cancel</button>
+                </div>
             </form>
+            </div>
         </dialog>
         <div>
             <img class="theme" src="./Images/dark.png">
         </div>
     </header>
+    <main></main>
 </body>
 </html>
