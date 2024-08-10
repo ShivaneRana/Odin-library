@@ -20,8 +20,6 @@ theme.addEventListener("click",function(){
     }
 })
 
-showAddBook.showModal()
-
 // this is for adding book dialog box
 addBook.addEventListener("click",() => {
     showAddBook.showModal();
