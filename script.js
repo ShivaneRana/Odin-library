@@ -37,6 +37,8 @@ showAddBook.addEventListener("click",function(e){
 
 // this closes the dialog box
 cancel.addEventListener("click",function(){
-
+    author.value = "";
+    pages.value = "";
+    title.value = "";
     showAddBook.close();
 })
