@@ -60,20 +60,22 @@ header > div{
     min-height: min-content;
     padding: 10px;
 
+    /* this is for the +add Book button*/
     &:nth-child(2){
         & > button{
             background-color: var(--primaryColor);
             color: var(--inverse);
             border: none;
-            font-size: calc(1.5rem + 1.5vw);
+            font-size: 1.2rem;
             font-weight: bolder;
             transition: background-color 0.50s;
             cursor: pointer;;
         }
     }
 
+    /* this targets all the images in the header */
     & > img{
-        height: calc(1.5rem + 2vw);
+        height: 3rem;
         cursor: pointer;
     }
 }
@@ -87,6 +89,7 @@ header > div{
     padding: 0px;
     box-shadow: var(--inverse) 0px 1px 1px, var(--inverse)(9, 30, 66, 0.13) 0px 0px 1px 1px;
     border-radius: 30px;
+    outline: 1px solid var(--inverse3);
     color: var(--inverse);
     & > .wrapper{
         padding: 50px;
@@ -98,12 +101,12 @@ header > div{
     }
 }
 
+
 .wrapper{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     & > h1{
         margin-bottom: 25px;
     }
@@ -153,4 +156,36 @@ header > div{
             }
         }
     }
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 15vh;
+}
+
+
+/* this contains all the items */
+.itemContainer{
+    display: grid;
+    width: 90%;
+    height: 80%;
+    /* if i add minmax(400px,1fr) the content does not center properly so i am using a absolute value for it*/
+    grid-template-columns: repeat(auto-fit,400px);
+    justify-content: center;
+    gap: 20px;
+}
+
+.item{
+    width: 400px;
+    height: 400px;
+    background-color: #2ABB7F;
+    outline: 1px dashed;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
 }
