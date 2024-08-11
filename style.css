@@ -28,8 +28,6 @@ body{
     transition: background-color 0.50s;
     background-color: var(--primaryColor);
     font-size: 16px;
-    height: 100vh;
-    width: 100vw;
     position: relative;
 }
 
@@ -69,7 +67,7 @@ header > div{
             font-size: 1.2rem;
             font-weight: bolder;
             transition: background-color 0.50s;
-            cursor: pointer;;
+            cursor: pointer;
         }
     }
 
@@ -77,6 +75,10 @@ header > div{
     & > img{
         height: 3rem;
         cursor: pointer;
+        transition: height 0.30s;
+        &:hover{
+            height: 3.5rem;
+        }
     }
 }
 
@@ -109,10 +111,15 @@ header > div{
     align-items: center;
     & > h1{
         margin-bottom: 25px;
+        user-select: none;
     }
     & > form{
         
         font-weight: bold;
+
+        & > div > label{
+            user-select: none;
+        }
 
         & > div > input{
             margin-bottom: 10px;
