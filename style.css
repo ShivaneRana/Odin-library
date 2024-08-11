@@ -190,8 +190,44 @@ main{
     width: 400px;
     height: 400px;
     background-color: #2ABB7F;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
+    overflow: scroll;
+    position: relative;
+
+    /* this controls how the content inside is displayed */
+    & > p{
+        &:nth-child(2){
+            font-weight: bolder;
+            font-size: 3rem;
+            text-decoration: underline;
+            overflow-wrap: anywhere;
+            word-break:normal;
+            text-align: center;
+            margin-top: 50%;
+            line-height: 3.5rem;
+            letter-spacing: -0.05em;
+            scroll-behavior: smooth;
+        }
+
+        &:last-child{
+            margin-top: 30px;
+            width: 100%;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        &:first-child{
+            position: absolute;
+            padding: 5px 20px;
+            font-weight: lighter;
+            border-radius: 10px;
+            top: 0;
+            left: 0;
+            margin: 20px;
+        }
+    }
 }
