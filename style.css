@@ -207,7 +207,6 @@ main{
             overflow-wrap: anywhere;
             word-break:normal;
             text-align: center;
-            margin-top: 50%;
             line-height: 3.5rem;
             letter-spacing: -0.05em;
             scroll-behavior: smooth;
@@ -228,6 +227,7 @@ main{
             top: 0;
             left: 0;
             margin: 20px;
+            background-color: var(--red);
         }
     }
 }
