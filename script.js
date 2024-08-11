@@ -23,6 +23,13 @@ theme.addEventListener("click",function(){
     }
 })
 
+// this is for clearing input value in showAddBook;
+function clearInput(){
+    authorD.value = "";
+    titleD.value = "";
+    pagesD.value = "";
+}
+
 // this is for adding book dialog box
 addBook.addEventListener("click",() => {
     showAddBook.showModal();
@@ -37,9 +44,7 @@ showAddBook.addEventListener("click",function(e){
 
 // this closes the dialog box
 cancel.addEventListener("click",function(){
-    authorD.value = "";
-    pagesD.value = "";
-    titleD.value = "";
+    clearInput();
     showAddBook.close();
 })
 
@@ -54,6 +59,53 @@ add.addEventListener("click",() => {
         this.title = title;
         this.pages = pages;
     }
+
+    // now i know why prototype is so good
+    // these value make sure that same item is not entered more than once
+    inputValue.prototype.entered;
+    inputValue.prototype.check = function(){
+        if(entered === true){
+            return true;
+        }else{
+            false;
+        }
+    }
+
+    function addToLibrary(library){
+        const book = new inputValue(authorD.value,titleD.value,pagesD.value);
+        library.push(book);
+    }
+
+    function showLibrary(){
+        // this code is not perfect and iterate through same items many times
+        // item.entered make sure that it does not happens
+        // i am really proud of this solution
+        library.forEach((item) => {
+            const a = document.createElement("p");
+            const p = document.createElement("p");
+            const t = document.createElement("p");
+            a.textContent = item.author;
+            p.textContent = item.pages;
+            t.textContent = item.title;
+            const div = document.createElement("div");
+            div.classList.add("item");
+            div.append(p);
+            div.append(t);
+            div.append(a);
+            // this checks if the item being added is unique and not a copy
+            if(!item.entered === true){
+                itemContainer.append(div);
+                item.entered = true;
+            }else{
+                console.log("already in the library");
+            }
+        })
+    }
+    addToLibrary(library);
+    showLibrary();
+    console.log(library);
+    clearInput();
+    showAddBook.close();
 })
 
 
