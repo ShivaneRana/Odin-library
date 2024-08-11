@@ -1,15 +1,15 @@
 const theme = document.querySelector(".theme");
 const logo = document.querySelector(".logo");
-const addBook = document.querySelector(".addBook")
-const showAddBook = document.querySelector(".showAddBook");
-const wrapper = document.querySelector(".wrapper")
-const add = document.querySelector(".add");
+const addBook = document.querySelector(".addBook"); //this is for +add Book button 
+const showAddBook = document.querySelector(".showAddBook"); //this is for the dialog that pops up on clicking +add Book
+const wrapper = document.querySelector(".wrapper");
+const add = document.querySelector(".add"); //this is for saving the book to the main display
 const cancel = document.querySelector(".cancel");
 const main = document.querySelector("main");
-const author = document.querySelector("#author");
-const title = document.querySelector("#title");
-const pages = document.querySelector("#pages");
-
+const authorD = document.querySelector("#authorD");
+const titleD = document.querySelector("#titleD");
+const pagesD = document.querySelector("#pagesD");
+const itemContainer = document.querySelector(".itemContainer");
 
 // this changes theme
 theme.addEventListener("click",function(){
@@ -42,6 +42,42 @@ cancel.addEventListener("click",function(){
     title.value = "";
     showAddBook.close();
 })
+
+// this is logic for adding items to itemContainer
+const library = [];
+
+add.addEventListener("click",function(){
+    
+    // a constructor function for creating new enteries
+    function createEntry(author,title,pages){
+        this.author = author;
+        this.title = title;
+        this.pages = pages;
+    }
+
+    // for displaying library content
+    function displayLibrary(nuts){
+        const div = document.createElement("div");
+        nuts.forEach((item) => {
+            div.append(item.author);
+            div.append(item.value);
+            div.append(item.pages);
+            div.classList.add("item");
+            itemContainer.append(div);
+        })
+    }
+
+    library.unshift(new createEntry(authorD.value,titleD.value,pagesD.value));
+    console.log(library);
+    displayLibrary(library);
+    authorD.value = "";
+    titleD.value = "";
+    pagesD.value = "";
+    showAddBook.close();
+})
+
+
+
 
 /* const library = [
 	{
