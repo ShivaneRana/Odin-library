@@ -176,16 +176,15 @@ main{
     /* if i add minmax(400px,1fr) the content does not center properly so i am using a absolute value for it*/
     grid-template-columns: repeat(auto-fit,400px);
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 .item{
     width: 400px;
     height: 400px;
     background-color: #2ABB7F;
-    outline: 1px dashed;
     display: grid;
     justify-content: center;
     align-items: center;
-    border-radius: 30px;
+    border-radius: 15px;
 }
