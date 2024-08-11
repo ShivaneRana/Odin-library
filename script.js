@@ -42,3 +42,29 @@ cancel.addEventListener("click",function(){
     title.value = "";
     showAddBook.close();
 })
+
+/* const library = [
+	{
+		user:"name",
+		age:20,
+	}
+]
+
+createEntry.prototype.info = function(){
+	return `${this.user} is of age ${this.age}`;
+}
+
+function createEntry(user,age){
+	this.user = user;
+	this.age = age;
+}
+
+library.push(new createEntry("nanadkljfa",1443));
+library.push(new createEntry("nanadkljfa",1443));
+library.push(new createEntry("nanadkljfa",1443));
+library.push(new createEntry("nanadkljfa",1443));
+library.push(new createEntry("nanadkljfa",1443));
+
+
+
+console.log(library[3].info()) */
