@@ -37,46 +37,24 @@ showAddBook.addEventListener("click",function(e){
 
 // this closes the dialog box
 cancel.addEventListener("click",function(){
-    author.value = "";
-    pages.value = "";
-    title.value = "";
+    authorD.value = "";
+    pagesD.value = "";
+    titleD.value = "";
     showAddBook.close();
 })
 
-// this is logic for adding items to itemContainer
+// stores all the books
 const library = [];
 
-add.addEventListener("click",function(){
-    
-    // a constructor function for creating new enteries
-    function createEntry(author,title,pages){
+
+// this is logic for adding items to itemContainer
+add.addEventListener("click",() => {
+    function inputValue(author,title,pages){
         this.author = author;
         this.title = title;
         this.pages = pages;
     }
-
-    // for displaying library content
-    function displayLibrary(nuts){
-        const div = document.createElement("div");
-        nuts.forEach((item) => {
-            div.append(item.author);
-            div.append(item.value);
-            div.append(item.pages);
-            div.classList.add("item");
-            itemContainer.append(div);
-        })
-    }
-
-    library.unshift(new createEntry(authorD.value,titleD.value,pagesD.value));
-    console.log(library);
-    displayLibrary(library);
-    authorD.value = "";
-    titleD.value = "";
-    pagesD.value = "";
-    showAddBook.close();
 })
-
-
 
 
 /* const library = [
