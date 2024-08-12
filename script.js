@@ -11,6 +11,7 @@ const titleD = document.querySelector("#titleD");
 const pagesD = document.querySelector("#pagesD");
 const itemContainer = document.querySelector(".itemContainer");
 
+
 // this changes theme
 theme.addEventListener("click",function(){
     document.documentElement.classList.toggle("dark");
@@ -54,6 +55,8 @@ const library = [];
 
 // this is logic for adding items to itemContainer
 add.addEventListener("click",() => {
+
+
     function inputValue(author,title,pages){
         this.author = author;
         this.title = title;
@@ -80,18 +83,32 @@ add.addEventListener("click",() => {
         // this code is not perfect and iterate through same items many times
         // item.entered make sure that it does not happens
         // i am really proud of this solution
-        library.forEach((item) => {
+        library.forEach((item,index) => {
             const a = document.createElement("p");
             const p = document.createElement("p");
             const t = document.createElement("p");
-            a.textContent = item.author;
-            p.textContent = item.pages;
+
+            // this is for removing and toggling read and unread status
+            const remove = document.createElement("button");
+            const toggle = document.createElement("button");
+            toggle.classList.add("toggle");
+            remove.classList.add("remove")
+            remove.textContent = "Remove";
+            toggle.textContent = "Read";
+
+            // this is for assigning value to div in a patter so that css classes apply accordingly
+            
+            a.textContent = "Author: "+item.author;
+            p.textContent = "Pages: "+item.pages;
             t.textContent = item.title;
             const div = document.createElement("div");
             div.classList.add("item");
             div.append(p);
             div.append(t);
             div.append(a);
+            div.append(remove);
+            div.append(toggle);
+            
             // this checks if the item being added is unique and not a copy
             if(!item.entered === true){
                 itemContainer.append(div);
@@ -109,6 +126,7 @@ add.addEventListener("click",() => {
 })
 
 
+// this was a previour itereation of how i would add books to library
 /* const library = [
 	{
 		user:"name",
@@ -130,7 +148,4 @@ library.push(new createEntry("nanadkljfa",1443));
 library.push(new createEntry("nanadkljfa",1443));
 library.push(new createEntry("nanadkljfa",1443));
 library.push(new createEntry("nanadkljfa",1443));
-
-
-
 console.log(library[3].info()) */
