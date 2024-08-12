@@ -12,7 +12,6 @@ const pagesD = document.querySelector("#pagesD");
 const itemContainer = document.querySelector(".itemContainer");
 const remove = document.querySelector(".remove");
 const read = document.querySelector(".read");
-const item = document.querySelector(".item");
 
 
 // this changes theme
