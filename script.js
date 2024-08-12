@@ -97,7 +97,6 @@ add.addEventListener("click",() => {
             toggle.textContent = "Read";
 
             // this is for assigning value to div in a patter so that css classes apply accordingly
-            
             a.textContent = "Author: "+item.author;
             p.textContent = "Pages: "+item.pages;
             t.textContent = item.title;
@@ -107,6 +106,7 @@ add.addEventListener("click",() => {
             div.append(t);
             div.append(a);
             div.append(remove);
+            
             div.append(toggle);
             
             // this checks if the item being added is unique and not a copy
