@@ -106,7 +106,7 @@ add.addEventListener("click",() => {
             div.append(t);
             div.append(a);
             div.append(remove);
-            
+            div
             div.append(toggle);
             
             // this checks if the item being added is unique and not a copy
