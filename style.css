@@ -198,23 +198,6 @@ main{
     overflow: scroll;
     position: relative;
 
-    /* this is for the button remove and toogle */
-    & > button{
-        position: absolute;
-        padding: 5px 20px;
-        font-weight: lighter;
-        border-radius: 10px;
-        margin: 20px;
-        font-size: 1rem;
-        border: none;
-        background-color: var(--red);
-        transition: background-color 0.30s;
-
-        &:hover{
-            background-color: lightblue;
-        }
-    }
-
     /* this controls how the content inside is displayed */
     & > p{
         &:nth-child(2){
@@ -248,14 +231,4 @@ main{
             background-color: var(--red);
         }
     }
-}
-
-.remove{
-    bottom: 0;
-    right: 0;
-}
-
-.toggle{
-    bottom: 0;
-    left: 0;
 }

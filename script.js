@@ -10,6 +10,8 @@ const authorD = document.querySelector("#authorD");
 const titleD = document.querySelector("#titleD");
 const pagesD = document.querySelector("#pagesD");
 const itemContainer = document.querySelector(".itemContainer");
+const remove = document.createElement("button");
+const status = document.createElement("button");
 
 
 // this changes theme
@@ -87,15 +89,6 @@ add.addEventListener("click",() => {
             const a = document.createElement("p");
             const p = document.createElement("p");
             const t = document.createElement("p");
-
-            // this is for removing and toggling read and unread status
-            const remove = document.createElement("button");
-            const toggle = document.createElement("button");
-            toggle.classList.add("toggle");
-            remove.classList.add("remove")
-            remove.textContent = "Remove";
-            toggle.textContent = "Read";
-
             // this is for assigning value to div in a patter so that css classes apply accordingly
             a.textContent = "Author: "+item.author;
             p.textContent = "Pages: "+item.pages;
@@ -105,13 +98,11 @@ add.addEventListener("click",() => {
             div.append(p);
             div.append(t);
             div.append(a);
-            div.append(remove);
-            div
-            div.append(toggle);
             
             // this checks if the item being added is unique and not a copy
             if(!item.entered === true){
                 itemContainer.append(div);
+                console.log("new Item add to library");
                 item.entered = true;
             }else{
                 console.log("already in the library");
@@ -120,7 +111,6 @@ add.addEventListener("click",() => {
     }
     addToLibrary(library);
     showLibrary();
-    console.log(library);
     clearInput();
     showAddBook.close();
 })
