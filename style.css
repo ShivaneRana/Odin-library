@@ -270,6 +270,12 @@ main{
         right: 0;
         background-color: rebeccapurple;
     }
+
+    .edit{
+        position: absolute;
+        bottom: 0;
+        background-color: rebeccapurple;
+    }
 }
 
 /* this is for formchecked div */
@@ -280,7 +286,7 @@ main{
     width: 100%;
 }
 
-#checkedD{
+#checkD{
     margin-top: 10px;
     width: 20px;
     height: 20px;
