@@ -200,6 +200,8 @@ main{
 
     /* this controls how the content inside is displayed */
     & > p{
+
+        /* title */
         &:nth-child(2){
             font-weight: bolder;
             font-size: 3rem;
@@ -212,13 +214,15 @@ main{
             scroll-behavior: smooth;
         }
 
-        &:last-child{
+        /* author */
+        &:nth-child(3){
             margin-top: 30px;
             width: 100%;
             font-size: 1.1rem;
             text-align: center;
         }
 
+        /* this is for page count */
         &:first-child{
             position: absolute;
             padding: 5px 20px;
@@ -229,6 +233,56 @@ main{
             margin: 20px;
             font-size: 1rem;
             background-color: var(--red);
+            transition: background-color 0.30s;
+
+            &:hover{
+                background-color: lightblue;
+            }
         }
     }
+
+    & > button{
+        padding: 5px 20px;
+        border-radius: 10px;
+        border: none;
+        position: absolute;
+        margin: 20px;
+        font-weight: lighter;
+        font-size: 1rem;
+
+
+        &:hover{
+            background-color: lightblue;
+            transition: background-color 0.30s;
+        }
+    }
+
+    .read{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: rebeccapurple;
+    }
+
+    .remove{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: rebeccapurple;
+    }
+}
+
+/* this is for formchecked div */
+.formChecked{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#checkedD{
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+    outline: 0;
 }
