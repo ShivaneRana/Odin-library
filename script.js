@@ -37,7 +37,7 @@ addBook.addEventListener("click",() => {
     showAddBook.showModal();
 })
 
-
+// to make sure that dialogbox only closes when clicked outside of it
 showAddBook.addEventListener("click",function(e){
     if(!wrapper.contains(e.target)){
         showAddBook.close();
@@ -68,6 +68,7 @@ function addTOLibrary(obj){
 }
 
 function displayLibrary(){
+
     console.log(`displayLibrary function was called`);
     library.forEach((item,index) => {
         
