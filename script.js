@@ -12,7 +12,6 @@ const pagesD = document.querySelector("#pagesD"); //page input
 const checkD = document.querySelector("#checkD"); //check input
 const itemContainer = document.querySelector(".itemContainer"); //contains all the items that will be displayed
 
-
 // this changes theme
 theme.addEventListener("click",function(){
     document.documentElement.classList.toggle("dark");
@@ -89,24 +88,23 @@ function displayLibrary(){
             const edit = document.createElement("button");
             const remove = document.createElement("button");
             remove.textContent = "Remove";
-            edit.textContent ="Edit";
             remove.classList.add("remove");
-            edit.classList.add("edit");
             check.classList.add("read");
             page.textContent = item.page;
             title.textContent = item.title;
             author.textContent = item.author;
             if(item.read === true){
-                check.textContent = "Unread";
-            }else{
+                div.style.backgroundColor = "#2ABB7F";
                 check.textContent = "Read";
+            }else{
+                check.textContent = "Unread";
+                div.style.backgroundColor = "pink";
             }
             div.append(page);
             div.append(title);
             div.append(author);
             div.append(check);
             div.append(remove);
-            div.append(edit);
             itemContainer.append(div)
             item.exist = true;
 
@@ -124,18 +122,17 @@ function displayLibrary(){
 
             
             // changes color of the books that have been read
-
             check.addEventListener("click" , () => {
                 if(check.textContent === "Read"){
                     div.style.backgroundColor = "pink";
                     check.textContent = "Unread";
+                    item.read = false;
                 }else{
-                    div.style.backgroundColor = "green"
+                    div.style.backgroundColor = "#2ABB7F";
                     check.textContent = "Read";
+                    item.read = true
                 }
             })
-
-
         }
     })
 }
