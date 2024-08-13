@@ -110,8 +110,7 @@ function displayLibrary(){
             itemContainer.append(div)
             item.exist = true;
 
-            // remove button functionality
-
+            // remove items from the library and display  nwe library;
             remove.addEventListener("click",function(){
             
                 console.log(`item from index ${item.itemNumber} removed`);
@@ -123,9 +122,21 @@ function displayLibrary(){
                 displayLibrary();
             })
 
+            
+            // changes color of the books that have been read
+
+            check.addEventListener("click" , () => {
+                if(check.textContent === "Read"){
+                    div.style.backgroundColor = "pink";
+                    check.textContent = "Unread";
+                }else{
+                    div.style.backgroundColor = "green"
+                    check.textContent = "Read";
+                }
+            })
+
+
         }
-
-
     })
 }
 
