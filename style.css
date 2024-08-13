@@ -189,6 +189,21 @@ main{
 }
 
 
+/* Keyframes for the up and down movement */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Adjust the movement distance */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
 .item{
     width: 400px;
     height: 400px;
@@ -249,7 +264,19 @@ main{
         font-size: 1rem;
         color: var(--primaryColor);
         background-color: var(--inverse);
+        cursor: pointer;
+        animation: moveUpDown 2s infinite; /* Apply the animation */
+        transition: background-color 0.3s, color 0.3s; 
+        /*  */
+
+        &:hover{
+            background-color: var(--secondaryColor);
+            color: var(--inverse3);
+            animation-play-state: paused; /* Pause the animation on hover */
+        }
     }
+
+    
 
     .read{
         position: absolute;
@@ -278,3 +305,4 @@ main{
     height: 20px;
     outline: 0;
 }
+
