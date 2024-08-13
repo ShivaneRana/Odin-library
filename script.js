@@ -109,7 +109,7 @@ function displayLibrary(){
             remove.textContent = "Remove";
             remove.classList.add("remove");
             check.classList.add("read");
-            page.textContent = item.page;
+            page.textContent = "Page count: "+item.page;
             title.textContent = item.title;
             author.textContent = item.author;
             if(item.read === true){
@@ -174,7 +174,7 @@ add.addEventListener("click",() => {
         titleD.value = "No title"
     }
     if(pagesD.value === ""){
-        pagesD.value = "0"
+        pagesD.value = "0";
     }else if((/^([0-9]{1,})$/.test(pagesD.value === false))){
         pagesD.value = "0";
     }
