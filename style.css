@@ -270,12 +270,6 @@ main{
         right: 0;
         background-color: rebeccapurple;
     }
-
-    .edit{
-        position: absolute;
-        bottom: 0;
-        background-color: rebeccapurple;
-    }
 }
 
 /* this is for formchecked div */
