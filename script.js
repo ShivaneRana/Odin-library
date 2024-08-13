@@ -52,6 +52,7 @@ cancel.addEventListener("click",function(){
 
 // stores all the books
 const library = [];
+emptyList();
 
 function inputContructor(author,title,page,read){
     this.author = author;
@@ -68,6 +69,7 @@ function addTOLibrary(obj){
 }
 
 function displayLibrary(){
+    emptyList();
 
     console.log(`displayLibrary function was called`);
     library.forEach((item,index) => {
@@ -75,11 +77,9 @@ function displayLibrary(){
         // this gives each item a unique itemNumber
         if(item.exist === false){
             item.itemNumber = index;
-            console.log(item.itemNumber);
         }
         // this make sure that same value are not added to the itemContainer more than once
         if(item.exist === false){
-            console.log(library)
             const div = document.createElement("div");
             div.classList.add("item");
             const page = document.createElement("p");
@@ -112,7 +112,6 @@ function displayLibrary(){
             // remove items from the library and display  nwe library;
             remove.addEventListener("click",function(){
             
-                console.log(`item from index ${item.itemNumber} removed`);
                 library.splice(item.itemNumber,1);
                 library.forEach((item) => {
                     item.exist = false;
@@ -145,3 +144,19 @@ add.addEventListener("click",() => {
     clearInput();
     showAddBook.close();
 })
+
+
+// display message if there is no entry
+function emptyList(){
+
+    if(library.length === 0){
+        empty();
+
+    }else if(itemContainer.textContent === "So empty"){
+        itemContainer.textContent = "";
+    }
+
+    function empty(){
+        itemContainer.textContent = "So empty";
+    }
+}
