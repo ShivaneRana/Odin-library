@@ -159,6 +159,21 @@ add.addEventListener("click",() => {
     if(library.length === 0){
         itemContainer.textContent = "";
     }
+
+    
+    // this control what happens when an input field is left empty
+    if( authorD.value === ""){
+        authorD.value = "No author";
+    }
+    if(titleD.value === ""){
+        titleD.value = "No title"
+    }
+    if(pagesD.value === ""){
+        pagesD.value = "0"
+    }else if((/^([0-9]{1,})$/.test(pagesD.value === false))){
+        pagesD.value = "0";
+    }
+
     const obj = new inputContructor(authorD.value,titleD.value,pagesD.value,checkD.checked);
     addTOLibrary(obj);
     displayLibrary();
