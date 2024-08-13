@@ -11,6 +11,11 @@ const titleD = document.querySelector("#titleD"); //title input
 const pagesD = document.querySelector("#pagesD"); //page input
 const checkD = document.querySelector("#checkD"); //check input
 const itemContainer = document.querySelector(".itemContainer"); //contains all the items that will be displayed
+const cry = document.createElement("img");
+cry.src = "./Images/cry.png"
+cry.style.width = "400px";
+cry.style.height = "400px";
+itemContainer.append(cry);
 
 // this changes theme
 theme.addEventListener("click",function(){
@@ -18,9 +23,11 @@ theme.addEventListener("click",function(){
     if(document.documentElement.className === "dark"){
         theme.src = "./Images/light.png";
         logo.src = "./Images/logoD.png";
+        cry.src = "./Images/cryD.png";
     }else{
        theme.src = "./Images/dark.png";
-       logo.src = "./Images/logo.png"; 
+       logo.src = "./Images/logo.png";
+       cry.src = "/Images/cry.png";
     }
 })
 
@@ -52,7 +59,6 @@ cancel.addEventListener("click",function(){
 
 // stores all the books
 const library = [];
-emptyList();
 
 function inputContructor(author,title,page,read){
     this.author = author;
@@ -69,7 +75,6 @@ function addTOLibrary(obj){
 }
 
 function displayLibrary(){
-    emptyList();
 
     console.log(`displayLibrary function was called`);
     library.forEach((item,index) => {
@@ -118,6 +123,9 @@ function displayLibrary(){
                 })
                 itemContainer.textContent = "";
                 displayLibrary();
+                if(library.length === 0){
+                    itemContainer.append(cry)
+                }
             })
 
             
@@ -138,25 +146,13 @@ function displayLibrary(){
 }
 
 add.addEventListener("click",() => {
+    // this remove empty icon when adding items
+    if(library.length === 0){
+        itemContainer.textContent = "";
+    }
     const obj = new inputContructor(authorD.value,titleD.value,pagesD.value,checkD.checked);
     addTOLibrary(obj);
     displayLibrary();
     clearInput();
     showAddBook.close();
 })
-
-
-// display message if there is no entry
-function emptyList(){
-
-    if(library.length === 0){
-        empty();
-
-    }else if(itemContainer.textContent === "So empty"){
-        itemContainer.textContent = "";
-    }
-
-    function empty(){
-        itemContainer.textContent = "So empty";
-    }
-}
