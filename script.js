@@ -11,11 +11,7 @@ const titleD = document.querySelector("#titleD"); //title input
 const pagesD = document.querySelector("#pagesD"); //page input
 const checkD = document.querySelector("#checkD"); //check input
 const itemContainer = document.querySelector(".itemContainer"); //contains all the items that will be displayed
-const remove = document.createElement("button"); //remove button on each item
-const read = document.createElement("button"); //toggle read and unread status on item
-const edit = document.createElement("button"); //edit content inside each item
-remove.textContent = "Remove";
-edit.textContent = "Edit";
+
 
 // this changes theme
 theme.addEventListener("click",function(){
@@ -34,6 +30,7 @@ function clearInput(){
     authorD.value = "";
     titleD.value = "";
     pagesD.value = "";
+    checkD.checked = false;
 }
 
 // this is for adding book dialog box
@@ -56,3 +53,54 @@ cancel.addEventListener("click",function(){
 
 // stores all the books
 const library = [];
+
+function inputContructor(author,title,page,read){
+    this.author = author;
+    this.title = title;
+    this.page = page;
+    this.read = read;
+}
+
+inputContructor.prototype.exist = false;
+
+function addTOLibrary(obj){
+    library.unshift(obj);
+}
+
+function displayLibrary(){
+    library.forEach((item,index) => {
+        // this make sure that same value are not added to the itemContainer more than once
+        if(item.exist === false){        
+            console.log(library)
+            const div = document.createElement("div");
+            div.classList.add("item");
+            const page = document.createElement("p");
+            const title = document.createElement("p");
+            const author = document.createElement("p");
+            const check = document.createElement("button");
+            check.classList.add("read");
+            page.textContent = item.page;
+            title.textContent = item.title;
+            author.textContent = item.author;
+            if(item.read === true){
+                check.textContent = "Unread";
+            }else{
+                check.textContent = "Read";
+            }
+            div.append(page);
+            div.append(title);
+            div.append(author);
+            div.append(check);
+            itemContainer.append(div)
+            item.exist = true;
+        }
+    })
+}
+
+add.addEventListener("click",() => {
+    const obj = new inputContructor(authorD.value,titleD.value,pagesD.value,checkD.checked);
+    addTOLibrary(obj);
+    displayLibrary();
+    clearInput();
+    showAddBook.close();
+})
