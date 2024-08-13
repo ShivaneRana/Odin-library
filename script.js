@@ -11,6 +11,8 @@ const titleD = document.querySelector("#titleD"); //title input
 const pagesD = document.querySelector("#pagesD"); //page input
 const checkD = document.querySelector("#checkD"); //check input
 const itemContainer = document.querySelector(".itemContainer"); //contains all the items that will be displayed
+
+// this is for image that displays when the display is empty
 const cry = document.createElement("img");
 cry.src = "./Images/cry.png"
 cry.style.width = "400px";
@@ -146,6 +148,7 @@ function displayLibrary(){
 }
 
 add.addEventListener("click",() => {
+    
     // this remove empty icon when adding items
     if(library.length === 0){
         itemContainer.textContent = "";

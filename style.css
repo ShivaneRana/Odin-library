@@ -190,7 +190,6 @@ main{
 .item{
     width: 400px;
     height: 400px;
-    background-color: #2ABB7F;
     display: flex;
     flex-direction: column;
     justify-content: center;
