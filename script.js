@@ -13,8 +13,13 @@ const checkD = document.querySelector("#checkD"); //check input
 const itemContainer = document.querySelector(".itemContainer"); //contains all the items that will be displayed
 
 // these are color palette
-const ci1 = "linear-gradient(to top, #37ecba 0%, #72afd3 100%)"; //this is for read
-const c1 = "linear-gradient(to top, #ff0844 0%, #ffb199 100%)"; //this is for not read
+
+// this is for green
+const ci1 = "linear-gradient(60deg, #96deda 0%, #50c9c3 100%)"; //this is for read
+
+// this is for red
+const c1 = "linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%)"; //this is for not read
+
 
 
 

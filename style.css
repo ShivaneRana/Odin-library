@@ -199,7 +199,6 @@ main{
     border-radius: 15px;
     overflow: scroll;
     position: relative;
-    transition: background-image 0.30s;
 
     /* this controls how the content inside is displayed */
     & > p{
@@ -234,14 +233,8 @@ main{
             top: 0;
             left: 0;
             margin: 20px;
-            font-size: 1rem;
-            background-image: var(--buttonColor);
+            background-color: var(--inverse);
             color: var(--primaryColor);
-            transition: background-image 0.30s;
-
-            &:hover{
-                background-color: lightblue;
-            }
         }
     }
 
@@ -254,22 +247,20 @@ main{
         margin: 20px;
         font-weight: lighter;
         font-size: 1rem;
+        color: var(--primaryColor);
+        background-color: var(--inverse);
     }
 
     .read{
         position: absolute;
         bottom: 0;
         left: 0;
-        color: var(--primaryColor);
-        background-image: var(--buttonColor);
     }
 
     .remove{
         position: absolute;
         bottom: 0;
         right: 0;
-        color: var(--primaryColor);
-        background-image: var(--buttonColor);
     }
 }
 
