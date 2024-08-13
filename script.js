@@ -62,15 +62,23 @@ function inputContructor(author,title,page,read){
 }
 
 inputContructor.prototype.exist = false;
+inputContructor.prototype.itemNumber;
 
 function addTOLibrary(obj){
-    library.unshift(obj);
+    library.push(obj);
 }
 
 function displayLibrary(){
+    console.log(`displayLibrary function was called`);
     library.forEach((item,index) => {
+        
+        // this gives each item a unique itemNumber
+        if(item.exist === false){
+            item.itemNumber = index;
+            console.log(item.itemNumber);
+        }
         // this make sure that same value are not added to the itemContainer more than once
-        if(item.exist === false){        
+        if(item.exist === false){
             console.log(library)
             const div = document.createElement("div");
             div.classList.add("item");
@@ -78,6 +86,12 @@ function displayLibrary(){
             const title = document.createElement("p");
             const author = document.createElement("p");
             const check = document.createElement("button");
+            const edit = document.createElement("button");
+            const remove = document.createElement("button");
+            remove.textContent = "Remove";
+            edit.textContent ="Edit";
+            remove.classList.add("remove");
+            edit.classList.add("edit");
             check.classList.add("read");
             page.textContent = item.page;
             title.textContent = item.title;
@@ -91,6 +105,8 @@ function displayLibrary(){
             div.append(title);
             div.append(author);
             div.append(check);
+            div.append(remove);
+            div.append(edit);
             itemContainer.append(div)
             item.exist = true;
         }
