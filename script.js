@@ -109,7 +109,23 @@ function displayLibrary(){
             div.append(edit);
             itemContainer.append(div)
             item.exist = true;
+
+            // remove button functionality
+
+            remove.addEventListener("click",function(){
+            
+                console.log(`item from index ${item.itemNumber} removed`);
+                library.splice(item.itemNumber,1);
+                library.forEach((item) => {
+                    item.exist = false;
+                })
+                itemContainer.textContent = "";
+                displayLibrary();
+            })
+
         }
+
+
     })
 }
 
