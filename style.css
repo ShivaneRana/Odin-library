@@ -184,7 +184,6 @@ main{
     grid-template-columns: repeat(auto-fit,400px);
     justify-content: center;
     gap: 30px;
-    color: var(--inverse);
 }
 
 
