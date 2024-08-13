@@ -18,6 +18,21 @@
     --buttonColor:linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
 }
 
+
+/* Keyframes for the up and down movement */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Adjust the movement distance */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -59,6 +74,7 @@ header > div{
     min-width: min-content;
     min-height: min-content;
     padding: 10px;
+    position: relative;
 
     /* this is for the +add Book button*/
     &:nth-child(2){
@@ -70,6 +86,12 @@ header > div{
             font-weight: bolder;
             transition: background-color 0.50s;
             cursor: pointer;
+            animation: moveUpDown 2s infinite;
+            transition: background-color 0.3s, color 0.3s;
+
+            &:hover{
+                animation-play-state: paused;
+            }
         }
     }
 
@@ -187,21 +209,6 @@ main{
     justify-content: center;
     gap: 30px;
 }
-
-
-/* Keyframes for the up and down movement */
-@keyframes moveUpDown {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px); /* Adjust the movement distance */
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
 
 
 .item{
