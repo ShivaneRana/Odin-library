@@ -12,6 +12,12 @@ const pagesD = document.querySelector("#pagesD"); //page input
 const checkD = document.querySelector("#checkD"); //check input
 const itemContainer = document.querySelector(".itemContainer"); //contains all the items that will be displayed
 
+// these are color palette
+const ci1 = "linear-gradient(to top, #37ecba 0%, #72afd3 100%)"; //this is for read
+const c1 = "linear-gradient(to top, #ff0844 0%, #ffb199 100%)"; //this is for not read
+
+
+
 // this is for image that displays when the display is empty
 const cry = document.createElement("img");
 cry.src = "./Images/cry.png"
@@ -102,11 +108,11 @@ function displayLibrary(){
             title.textContent = item.title;
             author.textContent = item.author;
             if(item.read === true){
-                div.style.backgroundColor = "#2ABB7F";
+                div.style.backgroundImage = ci1;
                 check.textContent = "Read";
             }else{
                 check.textContent = "Unread";
-                div.style.backgroundColor = "pink";
+                div.style.backgroundImage = c1;
             }
             div.append(page);
             div.append(title);
@@ -134,11 +140,11 @@ function displayLibrary(){
             // changes color of the books that have been read
             check.addEventListener("click" , () => {
                 if(check.textContent === "Read"){
-                    div.style.backgroundColor = "pink";
+                    div.style.backgroundImage = c1;
                     check.textContent = "Unread";
                     item.read = false;
                 }else{
-                    div.style.backgroundColor = "#2ABB7F";
+                    div.style.backgroundImage = ci1;
                     check.textContent = "Read";
                     item.read = true
                 }
