@@ -248,7 +248,7 @@ main{
         &:first-child{
             position: absolute;
             padding: 5px 20px;
-            font-weight: lighter;
+            font-weight: bolder;
             border-radius: 10px;
             top: 0;
             left: 0;
