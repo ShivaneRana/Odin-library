@@ -201,11 +201,12 @@ main{
 .itemContainer{
     display: grid;
     width: 90%;
-    height: 80%;
+    height: 95%;
     /* if i add minmax(400px,1fr) the content does not center properly so i am using a absolute value for it*/
     grid-template-columns: repeat(auto-fit,350px);
     justify-content: center;
     gap: 30px;
+    margin-bottom: 10vh;
 }
 
 
@@ -346,6 +347,8 @@ main{
     .itemContainer{
         grid-template-columns: repeat(auto-fit,300px);
     }
+
+
 }
 
 @media only screen and (min-width:850px){
@@ -376,13 +379,15 @@ main{
         }
 
         & > button{
-            font-size: 1rem;
+            font-size: 0.80rem;
         }
     }
 
     .itemContainer{
         grid-template-columns: repeat(auto-fit,350px);
     }
+
+
 }
 
 
@@ -420,6 +425,38 @@ main{
 
     .itemContainer{
         grid-template-columns: repeat(auto-fit,250px);
+    }
+}
+
+footer{
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    background-color: transparent;
+    backdrop-filter: blur(2px);
+    color: var(--inverse);
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+         
+        p{
+            font-size: 0.80rem;
+        }
+
+        
+        & > a > img{
+            height: 1.5rem;
+            width: 1.5rem;
+            border-radius: 50%;
+        }
     }
 }
 
