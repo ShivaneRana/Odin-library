@@ -26,8 +26,9 @@ const c1 = "linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9
 // this is for image that displays when the display is empty
 const cry = document.createElement("img");
 cry.src = "./Images/cry.png"
-cry.style.width = "400px";
-cry.style.height = "400px";
+cry.style.width = "200px";
+cry.style.height = "200px";
+cry.style.justifySelf = "center";
 itemContainer.append(cry);
 
 // this changes theme
