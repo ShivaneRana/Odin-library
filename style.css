@@ -168,7 +168,7 @@ header > div{
         padding: 20px;
         border: none;
         cursor: pointer;
-        transition: background-color 0.30s;
+        transition: background-color 0.50s;
         font-weight: bold;
 
         /* this is for save button */
@@ -271,7 +271,7 @@ main{
         background-color: var(--inverse);
         cursor: pointer;
         animation: moveUpDown 2s infinite; /* Apply the animation */
-        transition: background-color 0.3s, color 0.3s; 
+        transition: background-color 0.50s, color 0.50s; 
         /*  */
 
         &:hover{
