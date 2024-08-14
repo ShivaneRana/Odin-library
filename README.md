@@ -2,6 +2,11 @@
 
 This project is a web-based Library System that allows users to manage a collection of books. Users can add books with details like author, title, and page count, mark them as read/unread, and remove them from the collection. The system supports both light and dark themes.
 
+
+## Live Preview~
+
+https://shivanerana.github.io/Odin_library/
+
 ## Features
 
 - **Add Books:** Users can input details for a book and add it to their library.
@@ -26,6 +31,3 @@ This project is a web-based Library System that allows users to manage a collect
 ### Dark Theme
 ![Library System in Dark Theme](./ScreenShot/dark.png)
 
-## Live Preview~
-
-https://shivanerana.github.io/Odin_library/
