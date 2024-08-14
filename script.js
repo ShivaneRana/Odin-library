@@ -11,6 +11,10 @@ const titleD = document.querySelector("#titleD"); //title input
 const pagesD = document.querySelector("#pagesD"); //page input
 const checkD = document.querySelector("#checkD"); //check input
 const itemContainer = document.querySelector(".itemContainer"); //contains all the items that will be displayed
+const twitter = document.querySelector(".twitter");
+const linkedin = document.querySelector(".linkedin");
+const github = document.querySelector(".github");
+
 
 // these are color palette
 
@@ -38,10 +42,16 @@ theme.addEventListener("click",function(){
         theme.src = "./Images/light.png";
         logo.src = "./Images/logoD.png";
         cry.src = "./Images/cryD.png";
+        twitter.src = "./Images/xD.png";
+        github.src = "./Images/gitD.png";
+        linkedin.src = "./Images/linD.png";
     }else{
        theme.src = "./Images/dark.png";
        logo.src = "./Images/logo.png";
        cry.src = "./Images/cry.png";
+       twitter.src = "./Images/x.png";
+       github.src = "./Images/git.png";
+       linkedin.src = "./Images/lin.png";
     }
 })
 
