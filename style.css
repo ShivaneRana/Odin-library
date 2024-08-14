@@ -83,10 +83,9 @@ header > div{
             border: none;
             font-size: 1.2rem;
             font-weight: bolder;
-            transition: background-color 0.50s;
             cursor: pointer;
             animation: moveUpDown 2s infinite;
-            transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.50s, color 0.50s;
 
             &:hover{
                 animation-play-state: paused;
