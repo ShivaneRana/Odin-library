@@ -203,15 +203,15 @@ main{
     width: 90%;
     height: 80%;
     /* if i add minmax(400px,1fr) the content does not center properly so i am using a absolute value for it*/
-    grid-template-columns: repeat(auto-fit,400px);
+    grid-template-columns: repeat(auto-fit,350px);
     justify-content: center;
     gap: 30px;
 }
 
 
 .item{
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -265,7 +265,6 @@ main{
         border: none;
         position: absolute;
         margin: 20px;
-        font-weight: lighter;
         font-size: 1rem;
         color: var(--primaryColor);
         background-color: var(--inverse);
@@ -311,3 +310,40 @@ main{
     outline: 0;
 }
 
+/* i hate dealing with media queries */
+@media only screen and (max-width:450px){
+
+
+    header > div{
+        &:nth-child(2){
+            & > button{
+                font-size: 13px;
+            }
+        }
+
+        & > img{
+            height: 2rem;
+            transition: height 0.30s;
+
+            &:hover{
+                height: 2.5rem;
+            }
+        }
+    }
+
+    .item{
+        width: 300px;
+        height: 300px;
+        & > p{
+            font-size: 0.80rem;
+        }
+
+        & > button{
+            font-size: 0.80rem;
+        }
+    }
+
+    .itemContainer{
+        grid-template-columns: repeat(auto-fit,300px);
+    }
+}
