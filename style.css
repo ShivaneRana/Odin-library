@@ -1,5 +1,14 @@
+@font-face {
+    font-family: 'dmSerifDisplay';
+    src: url('./font/dmSerifDisplay.woff2') format('woff2'),
+         url('./font/dmSerifDisplay.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 :root{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: dmSerifDisplay,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     scroll-behavior: smooth;
     --primaryColor:#DEE4EA;
     --secondaryColor:#F1F2F4;
