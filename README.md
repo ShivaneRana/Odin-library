@@ -5,7 +5,7 @@ This project is a web-based Library System that allows users to manage a collect
 
 ## Live Preview~
 
-https://shivanerana.github.io/Odin_library/
+https://shivanerana.github.io/Odin-library/
 
 ## Features
 
