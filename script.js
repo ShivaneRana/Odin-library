@@ -41,7 +41,7 @@ theme.addEventListener("click",function(){
     }else{
        theme.src = "./Images/dark.png";
        logo.src = "./Images/logo.png";
-       cry.src = "/Images/cry.png";
+       cry.src = "./Images/cry.png";
     }
 })
 
